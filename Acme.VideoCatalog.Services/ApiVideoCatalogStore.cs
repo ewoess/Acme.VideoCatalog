@@ -20,6 +20,7 @@ public class ApiVideoCatalogStore : IVideoCatalogStore
     public async Task<IReadOnlyList<Video>> GetAllAsync()
     {
         IReadOnlyList<VideoData> videoDatas = await _videoRepository.GetAllAsync();
-        return _mapper.Map<IReadOnlyList<Video>>(videoDatas);
+        IOrderedEnumerable<VideoData> sortedVideoDatas = videoDatas.OrderBy(x => x.Title);
+        return _mapper.Map<IReadOnlyList<Video>>(sortedVideoDatas);
     }
 }
