@@ -12,4 +12,9 @@
     <PackageReference Include="Prism.DryIoc" Version="8.1.97" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Acme.VideoCatalog.DataAccess\Acme.VideoCatalog.DataAccess.csproj" />
+    <ProjectReference Include="..\Acme.VideoCatalog.Services\Acme.VideoCatalog.Services.csproj" />
+  </ItemGroup>
+
 </Project>

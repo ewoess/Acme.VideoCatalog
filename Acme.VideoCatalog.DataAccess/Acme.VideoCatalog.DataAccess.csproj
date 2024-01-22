@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Acme.VideoCatalog.Domain\Acme.VideoCatalog.Domain.csproj" />
+    <ProjectReference Include="..\Acme.VideoCatalog.Services\Acme.VideoCatalog.Services.csproj" />
   </ItemGroup>
 
   <ItemGroup>
