@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Acme.VideoCatalog.Services"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Acme.VideoCatalog.DataAccessTests", "Acme.VideoCatalog.DataAccessTests\Acme.VideoCatalog.DataAccessTests.csproj", "{3199B7D4-294C-44B6-BBFC-5F94C8495C3F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Acme.VideoCatalog.Domain.Tests", "Acme.VideoCatalog.Domain.Tests\Acme.VideoCatalog.Domain.Tests.csproj", "{CFB56AD9-6494-4A86-BCAE-A7F1D7C2EAA2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +49,10 @@ Global
 		{3199B7D4-294C-44B6-BBFC-5F94C8495C3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3199B7D4-294C-44B6-BBFC-5F94C8495C3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3199B7D4-294C-44B6-BBFC-5F94C8495C3F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CFB56AD9-6494-4A86-BCAE-A7F1D7C2EAA2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFB56AD9-6494-4A86-BCAE-A7F1D7C2EAA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFB56AD9-6494-4A86-BCAE-A7F1D7C2EAA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFB56AD9-6494-4A86-BCAE-A7F1D7C2EAA2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -54,6 +60,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{E3B693C5-729E-4724-A854-810103D86465} = {C4143C0A-22D2-4D93-A8DA-A90C9F79F874}
 		{3199B7D4-294C-44B6-BBFC-5F94C8495C3F} = {C4143C0A-22D2-4D93-A8DA-A90C9F79F874}
+		{CFB56AD9-6494-4A86-BCAE-A7F1D7C2EAA2} = {C4143C0A-22D2-4D93-A8DA-A90C9F79F874}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2A39DDEC-D95C-4599-A505-026D31603628}
