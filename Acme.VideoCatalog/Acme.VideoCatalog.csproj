@@ -4,6 +4,7 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>net7.0-windows</TargetFramework>
 	<RuntimeIdentifiers>win-x64</RuntimeIdentifiers>
+	<SelfContained>true</SelfContained>
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
   </PropertyGroup>
