@@ -1,4 +1,4 @@
-﻿using Acme.VideoCatalog.Domain.DataModels;
+﻿using Acme.VideoCatalog.DataAccess.Dtos;
 using Acme.VideoCatalog.Domain.Models;
 using AutoMapper;
 
@@ -14,6 +14,6 @@ public class VideoProfile : Profile
 {
     public VideoProfile()
     {
-        CreateMap<VideoData, Video>();
+        CreateMap<VideoDto, Video>();
     }
 }

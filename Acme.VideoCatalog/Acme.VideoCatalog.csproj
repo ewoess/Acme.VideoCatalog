@@ -19,7 +19,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Acme.VideoCatalog.DataAccess\Acme.VideoCatalog.DataAccess.csproj" />
+    <ProjectReference Include="..\Acme.VideoCatalog.Core\Acme.VideoCatalog.Core.csproj" />
+    <ProjectReference Include="..\Acme.VideoCatalog.DataAccess.HttpClient\Acme.VideoCatalog.DataAccess.HttpClient.csproj" />
+    <ProjectReference Include="..\Acme.VideoCatalog.DataAccess\Acme.VideoCatalog.DataAccess.HttpClient.csproj" />
     <ProjectReference Include="..\Acme.VideoCatalog.Services\Acme.VideoCatalog.Services.csproj" />
   </ItemGroup>
 

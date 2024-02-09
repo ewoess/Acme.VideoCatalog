@@ -1,7 +1,7 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net7.0</TargetFramework>
+	<TargetFramework>net7.0-windows</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
 
@@ -24,7 +24,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Acme.VideoCatalog.DataAccess\Acme.VideoCatalog.DataAccess.csproj" />
+    <ProjectReference Include="..\Acme.VideoCatalog.Domain\Acme.VideoCatalog.Domain.csproj" />
+    <ProjectReference Include="..\Acme.VideoCatalog\Acme.VideoCatalog.csproj" />
   </ItemGroup>
 
 </Project>

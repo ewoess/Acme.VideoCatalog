@@ -1,10 +1,10 @@
-﻿using Acme.VideoCatalog.Domain.DataModels;
+﻿using Acme.VideoCatalog.DataAccess.Dtos;
+using Acme.VideoCatalog.DataAccess.Exceptions;
+using Acme.VideoCatalog.DataAccess.Repositories;
 using Acme.VideoCatalog.Domain.Models;
 using Acme.VideoCatalog.Domain.Services;
-using Acme.VideoCatalog.Services.Repositories;
 using AutoMapper;
 using Microsoft.Extensions.Logging;
-using Acme.VideoCatalog.Services.Exceptions;
 
 namespace Acme.VideoCatalog.Services;
 
@@ -19,7 +19,7 @@ namespace Acme.VideoCatalog.Services;
 
 public class VideoCatalogService : IVideoCatalogService
 {
-    private readonly IRepository<VideoData> _videoRepository;
+    private readonly IRepository<VideoDto> _videoRepository;
     private readonly IMapper _mapper;
     private readonly ILogger<VideoCatalogService> _logger;
 
@@ -29,7 +29,7 @@ public class VideoCatalogService : IVideoCatalogService
     /// <param name="videoRepository">The repository for managing video data.</param>
     /// <param name="mapper">The object mapper for mapping between different object types.</param>
     /// <param name="loggerFactory">The factory for creating loggers.</param>
-    public VideoCatalogService(IRepository<VideoData> videoRepository, IMapper mapper, ILoggerFactory loggerFactory)
+    public VideoCatalogService(IRepository<VideoDto> videoRepository, IMapper mapper, ILoggerFactory loggerFactory)
     {
         _logger = loggerFactory.CreateLogger<VideoCatalogService>();
         _videoRepository = videoRepository;
@@ -49,14 +49,14 @@ public class VideoCatalogService : IVideoCatalogService
 /// This method will return an empty list if the video catalog is empty.
 /// If there is an error during data retrieval, this method will log the error and return a failure result.
 /// </remarks>
-/// <exception cref="DataRetrievalException">Thrown when there is an error retrieving the videos from the repository.</exception>
+/// <exception cref="Acme.VideoCatalog.DataAccess.Exceptions.DataRetrievalException">Thrown when there is an error retrieving the videos from the repository.</exception>
     public async Task<ServiceResult<IReadOnlyList<Video>>> GetAllAsync()
     {
-        IReadOnlyList<VideoData> videoDatas;
+        IReadOnlyList<VideoDto> videoDtos;
 
         try
         {
-            videoDatas = await _videoRepository.GetAllAsync();
+            videoDtos = await _videoRepository.GetAllAsync();
         }
         catch (DataRetrievalException e)
         {
@@ -64,8 +64,8 @@ public class VideoCatalogService : IVideoCatalogService
             return ServiceResult<IReadOnlyList<Video>>.Failure("Error retrieving Videos.");
         }
 
-        List<VideoData> sortedVideoDatas = videoDatas.OrderBy(x => x.Title).ToList();
-        var data = _mapper.Map<List<Video>>(sortedVideoDatas) ?? new List<Video>();
+        List<VideoDto> sortedVideoDtos = videoDtos.OrderBy(x => x.Title).ToList();
+        var data = _mapper.Map<List<Video>>(sortedVideoDtos) ?? new List<Video>();
         return ServiceResult<IReadOnlyList<Video>>.Success(data);
     }
 }

@@ -5,19 +5,25 @@ VisualStudioVersion = 17.5.33530.505
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Acme.VideoCatalog", "Acme.VideoCatalog\Acme.VideoCatalog.csproj", "{4D95A481-DB27-4691-AE7D-DB2A3295833F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Acme.VideoCatalog.Domain", "Acme.VideoCatalog.Domain\Acme.VideoCatalog.Domain.csproj", "{817E69E9-76CA-4536-93A4-F1259747DDDA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Acme.VideoCatalog.Domain", "Acme.VideoCatalog.Domain\Acme.VideoCatalog.Domain.csproj", "{817E69E9-76CA-4536-93A4-F1259747DDDA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Acme.VideoCatalog.DataAccess", "Acme.VideoCatalog.DataAccess\Acme.VideoCatalog.DataAccess.csproj", "{14B1F686-62D2-46E6-BDD8-8C1B1D1D5164}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Acme.VideoCatalog.DataAccess.HttpClient", "Acme.VideoCatalog.DataAccess.HttpClient\Acme.VideoCatalog.DataAccess.HttpClient.csproj", "{14B1F686-62D2-46E6-BDD8-8C1B1D1D5164}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{C4143C0A-22D2-4D93-A8DA-A90C9F79F874}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Acme.VideoCatalog.ServicesTests", "Acme.VideoCatalog.ServicesTests\Acme.VideoCatalog.ServicesTests.csproj", "{E3B693C5-729E-4724-A854-810103D86465}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Acme.VideoCatalog.ServicesTests", "Acme.VideoCatalog.ServicesTests\Acme.VideoCatalog.ServicesTests.csproj", "{E3B693C5-729E-4724-A854-810103D86465}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Acme.VideoCatalog.Services", "Acme.VideoCatalog.Services\Acme.VideoCatalog.Services.csproj", "{5B356AB1-1CA3-4C85-9888-7FCAD85852EB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Acme.VideoCatalog.Services", "Acme.VideoCatalog.Services\Acme.VideoCatalog.Services.csproj", "{5B356AB1-1CA3-4C85-9888-7FCAD85852EB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Acme.VideoCatalog.DataAccessTests", "Acme.VideoCatalog.DataAccessTests\Acme.VideoCatalog.DataAccessTests.csproj", "{3199B7D4-294C-44B6-BBFC-5F94C8495C3F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Acme.VideoCatalog.DataAccess.HttpClientTests", "Acme.VideoCatalog.DataAccess.HttpClientTests\Acme.VideoCatalog.DataAccess.HttpClientTests.csproj", "{3199B7D4-294C-44B6-BBFC-5F94C8495C3F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Acme.VideoCatalog.Domain.Tests", "Acme.VideoCatalog.Domain.Tests\Acme.VideoCatalog.Domain.Tests.csproj", "{CFB56AD9-6494-4A86-BCAE-A7F1D7C2EAA2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Acme.VideoCatalog.Domain.Tests", "Acme.VideoCatalog.Domain.Tests\Acme.VideoCatalog.Domain.Tests.csproj", "{CFB56AD9-6494-4A86-BCAE-A7F1D7C2EAA2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Acme.VideoCatalog.Core", "Acme.VideoCatalog.Core\Acme.VideoCatalog.Core.csproj", "{4580B90E-C422-4AAD-ACA1-40114BCC3F62}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Acme.VideoCatalog.Tests", "Acme.VideoCatalog.Tests\Acme.VideoCatalog.Tests.csproj", "{3990A797-4CDF-4B64-8D6E-19111B2BAC84}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Acme.VideoCatalog.DataAccess", "Acme.VideoCatalog.DataAccess\Acme.VideoCatalog.DataAccess.csproj", "{2937C960-AC63-46C3-80B8-8C1D2284AF55}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -53,6 +59,18 @@ Global
 		{CFB56AD9-6494-4A86-BCAE-A7F1D7C2EAA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CFB56AD9-6494-4A86-BCAE-A7F1D7C2EAA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CFB56AD9-6494-4A86-BCAE-A7F1D7C2EAA2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4580B90E-C422-4AAD-ACA1-40114BCC3F62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4580B90E-C422-4AAD-ACA1-40114BCC3F62}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4580B90E-C422-4AAD-ACA1-40114BCC3F62}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4580B90E-C422-4AAD-ACA1-40114BCC3F62}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3990A797-4CDF-4B64-8D6E-19111B2BAC84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3990A797-4CDF-4B64-8D6E-19111B2BAC84}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3990A797-4CDF-4B64-8D6E-19111B2BAC84}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3990A797-4CDF-4B64-8D6E-19111B2BAC84}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2937C960-AC63-46C3-80B8-8C1D2284AF55}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2937C960-AC63-46C3-80B8-8C1D2284AF55}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2937C960-AC63-46C3-80B8-8C1D2284AF55}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2937C960-AC63-46C3-80B8-8C1D2284AF55}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -61,6 +79,7 @@ Global
 		{E3B693C5-729E-4724-A854-810103D86465} = {C4143C0A-22D2-4D93-A8DA-A90C9F79F874}
 		{3199B7D4-294C-44B6-BBFC-5F94C8495C3F} = {C4143C0A-22D2-4D93-A8DA-A90C9F79F874}
 		{CFB56AD9-6494-4A86-BCAE-A7F1D7C2EAA2} = {C4143C0A-22D2-4D93-A8DA-A90C9F79F874}
+		{3990A797-4CDF-4B64-8D6E-19111B2BAC84} = {C4143C0A-22D2-4D93-A8DA-A90C9F79F874}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2A39DDEC-D95C-4599-A505-026D31603628}

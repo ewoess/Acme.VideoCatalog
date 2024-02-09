@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Acme.VideoCatalog
+namespace Acme.VideoCatalog.Views
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for MovieListView.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MovieListView : UserControl
     {
-        public MainWindow()
+        public MovieListView()
         {
             InitializeComponent();
         }

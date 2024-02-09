@@ -1,4 +1,4 @@
-﻿namespace Acme.VideoCatalog.Services.Repositories;
+﻿namespace Acme.VideoCatalog.DataAccess.Repositories;
 
 /// <summary>
 /// Represents a generic repository for managing entities of type <typeparamref name="T"/>.

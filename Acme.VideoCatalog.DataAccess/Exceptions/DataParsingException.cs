@@ -1,4 +1,4 @@
-﻿namespace Acme.VideoCatalog.Services.Exceptions;
+﻿namespace Acme.VideoCatalog.DataAccess.Exceptions;
 
 /// <summary>
 /// Represents errors that occur during data parsing in the video catalog services.

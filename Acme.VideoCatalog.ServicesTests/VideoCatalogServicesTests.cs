@@ -1,9 +1,9 @@
-using Acme.VideoCatalog.Domain.DataModels;
+using Acme.VideoCatalog.DataAccess.Dtos;
+using Acme.VideoCatalog.DataAccess.Exceptions;
+using Acme.VideoCatalog.DataAccess.Repositories;
 using Acme.VideoCatalog.Domain.Models;
 using Acme.VideoCatalog.Domain.Services;
 using Acme.VideoCatalog.Services;
-using Acme.VideoCatalog.Services.Exceptions;
-using Acme.VideoCatalog.Services.Repositories;
 using AutoMapper;
 using Microsoft.Extensions.Logging;
 using Moq;
@@ -12,7 +12,7 @@ namespace Acme.VideoCatalog.ServicesTests
 {
     public class VideoCatalogServicesTests
     {
-        private readonly Mock<IRepository<VideoData>> _mockVideoRepo;
+        private readonly Mock<IRepository<VideoDto>> _mockVideoRepo;
         private readonly Mock<IMapper> _mockMapper;
         private readonly Mock<ILoggerFactory> _mockLoggerFactory;
         private readonly Mock<ILogger<VideoCatalogService>> _mockLogger;
@@ -20,7 +20,7 @@ namespace Acme.VideoCatalog.ServicesTests
 
         public VideoCatalogServicesTests()
         {
-            _mockVideoRepo = new Mock<IRepository<VideoData>>();
+            _mockVideoRepo = new Mock<IRepository<VideoDto>>();
             _mockMapper = new Mock<IMapper>();
             _mockLogger = new Mock<ILogger<VideoCatalogService>>();
 
@@ -35,11 +35,11 @@ namespace Acme.VideoCatalog.ServicesTests
         public async void GetAll_WithVideosInCatalog_ShouldReturnVideosAllVideosInCatalog()
         {
             // Arrange
-            _mockVideoRepo.Setup(repo => repo.GetAllAsync()).ReturnsAsync(new List<VideoData>
+            _mockVideoRepo.Setup(repo => repo.GetAllAsync()).ReturnsAsync(new List<VideoDto>
             {
-                new VideoData { },
-                new VideoData { },
-                new VideoData { }
+                new VideoDto { },
+                new VideoDto { },
+                new VideoDto { }
             });
 
             var videoList = new List<Video>
@@ -48,7 +48,7 @@ namespace Acme.VideoCatalog.ServicesTests
                 new Video { },
                 new Video { }
             };
-            _mockMapper.Setup(mapper => mapper.Map<IReadOnlyList<Video>>(It.IsAny<IReadOnlyList<VideoData>>()))
+            _mockMapper.Setup(mapper => mapper.Map<IReadOnlyList<Video>>(It.IsAny<IReadOnlyList<VideoDto>>()))
                 .Returns(videoList);
             
             // Act
@@ -78,7 +78,7 @@ namespace Acme.VideoCatalog.ServicesTests
         public async Task GetAllAsync_WhenCatalogIsEmpty_ShouldReturnEmptyList()
         {
             // Arrange
-            _mockVideoRepo.Setup(repo => repo.GetAllAsync()).ReturnsAsync(new List<VideoData>());
+            _mockVideoRepo.Setup(repo => repo.GetAllAsync()).ReturnsAsync(new List<VideoDto>());
             // Act
             var result = await _service.GetAllAsync();
             // Assert
@@ -112,17 +112,17 @@ namespace Acme.VideoCatalog.ServicesTests
         public async Task GetAllAsync_WhenCatalogSucceeds_ShouldReturnOrderedList()
         {
             // Arrange
-            var unsortedVideoDatas = new List<VideoData>
+            var unsortedVideoDatas = new List<VideoDto>
             {
-                new VideoData { Title = "Zebra" },
-                new VideoData { Title = "Apple" }
+                new VideoDto { Title = "Zebra" },
+                new VideoDto { Title = "Apple" }
             };
 
             _mockVideoRepo.Setup(repo => repo.GetAllAsync()).ReturnsAsync(unsortedVideoDatas);
 
             // Setup AutoMapper to map VideoData objects to Video objects directly
-            _mockMapper.Setup(mapper => mapper.Map<List<Video>>(It.IsAny<List<VideoData>>()))
-                .Returns((List<VideoData> v) => v.Select(videoData => new Video { Title = videoData.Title }).ToList());
+            _mockMapper.Setup(mapper => mapper.Map<List<Video>>(It.IsAny<List<VideoDto>>()))
+                .Returns((List<VideoDto> v) => v.Select(videoData => new Video { Title = videoData.Title }).ToList());
 
             // Act
             var result = await _service.GetAllAsync();
